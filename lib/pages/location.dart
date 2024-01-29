@@ -8,8 +8,18 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+
+  int counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    print('initState function run');
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('build function run');
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
@@ -18,7 +28,13 @@ class _LocationState extends State<Location> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: const Text('location screen'),
+      body: ElevatedButton(
+        onPressed: (){
+          setState(() {
+            counter ++;
+          });
+        }, child: Text('counter is $counter'),
+      ),
     );
   }
 }
