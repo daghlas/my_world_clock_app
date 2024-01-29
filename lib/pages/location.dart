@@ -11,10 +11,18 @@ class _LocationState extends State<Location> {
 
   int counter = 0;
 
-  void getData(){
-    Future.delayed(const Duration(seconds : 3), (){
+  void getData() async {
+    //first name
+    await Future.delayed(const Duration(seconds : 3), (){
       print('DAGHLAS');
     });
+    //last name
+    Future.delayed(const Duration(seconds : 3), (){
+      print('KENYATTA');
+    });
+    //second name
+    print('KAIRE');
+
   }
 
   @override
