@@ -17,7 +17,7 @@ class _LocationState extends State<Location> {
       print('DAGHLAS');
     });
     //last name
-    Future.delayed(const Duration(seconds : 3), (){
+    Future.delayed(const Duration(seconds : 2), (){
       print('KENYATTA');
     });
     //second name
