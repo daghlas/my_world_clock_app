@@ -11,6 +11,12 @@ class _LocationState extends State<Location> {
 
   int counter = 0;
 
+  void getData(){
+    Future.delayed(const Duration(seconds : 3), (){
+      print('DAGHLAS');
+    });
+  }
+
   @override
   void initState() {
     super.initState();
