@@ -31,6 +31,10 @@ class _LocationState extends State<Location> {
   @override
   void initState() {
     super.initState();
+    getData();
+    //whatever is in here will continue running regardless of what goes on in
+    //the async getData(); method above. The print output below is not affected
+    //and will run when the screen loads
     print('initState function run');
   }
 
