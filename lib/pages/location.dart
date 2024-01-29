@@ -13,15 +13,18 @@ class _LocationState extends State<Location> {
 
   void getData() async {
     //first name
-    await Future.delayed(const Duration(seconds : 3), (){
-      print('DAGHLAS');
+    String firstName = await Future.delayed(const Duration(seconds : 3), (){
+      return 'DAGHLAS';
     });
     //last name
-    Future.delayed(const Duration(seconds : 2), (){
-      print('KENYATTA');
+    String lastName = await Future.delayed(const Duration(seconds : 2), (){
+      return 'KENYATTA';
     });
     //second name
-    print('KAIRE');
+    String secondName = 'KAIRE';
+
+    //OUTPUT
+    print('$firstName $secondName $lastName');
 
   }
 
