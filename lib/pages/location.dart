@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Location extends StatefulWidget {
@@ -24,7 +25,9 @@ class _LocationState extends State<Location> {
     String secondName = 'KAIRE';
 
     //OUTPUT
-    print('$firstName $secondName $lastName');
+    if (kDebugMode) {
+      print('$firstName $secondName $lastName');
+    }
 
   }
 
@@ -35,12 +38,16 @@ class _LocationState extends State<Location> {
     //whatever is in here will continue running regardless of what goes on in
     //the async getData(); method above. The print output below is not affected
     //and will run when the screen loads
-    print('initState function run');
+    if (kDebugMode) {
+      print('initState function run');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    print('build function run');
+    if (kDebugMode) {
+      print('build function run');
+    }
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
