@@ -12,37 +12,6 @@ class _LocationState extends State<Location> {
 
   int counter = 0;
 
-  void getData() async {
-    //first name
-    String firstName = await Future.delayed(const Duration(seconds : 3), (){
-      return 'DAGHLAS';
-    });
-    //last name
-    String lastName = await Future.delayed(const Duration(seconds : 2), (){
-      return 'KENYATTA';
-    });
-    //second name
-    String secondName = 'KAIRE';
-
-    //OUTPUT
-    if (kDebugMode) {
-      print('$firstName $secondName $lastName');
-    }
-
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getData();
-    //whatever is in here will continue running regardless of what goes on in
-    //the async getData(); method above. The print output below is not affected
-    //and will run when the screen loads
-    if (kDebugMode) {
-      print('initState function run');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
