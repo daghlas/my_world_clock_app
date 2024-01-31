@@ -20,7 +20,11 @@ class _LoadingState extends State<Loading> {
     String dateTime = data['datetime'];
     String offset = data['utc_offset'].substring(1,3);
     // print(dateTime);
-    print(offset);
+    // print(offset);
+
+    DateTime now = DateTime.parse(dateTime);
+    now = now.add(Duration(hours: int.parse(offset)));
+    print(now);
 
 
 
