@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -12,8 +13,10 @@ class _LoadingState extends State<Loading> {
 
   void getData() async {
 
-    Response response = await get('https://jsonplaceholder.typicode.com/todos/1' as Uri);
-    print(response.body);
+    Response response = await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
+    if (kDebugMode) {
+      print(response.body);
+    }
   }
 
   @override
