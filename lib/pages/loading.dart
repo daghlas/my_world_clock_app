@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
@@ -12,20 +11,23 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  void getData() async {
+  void getTime() async {
 
-    Response response = await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
-    if (kDebugMode) {
-      Map data = jsonDecode(response.body);
-      print(data);
-      print(data['title']);
-    }
+    Response response = await get(Uri.parse('https://worldtimeapi.org/api/timezone/Africa/Nairobi'));
+    Map data = jsonDecode(response.body);
+    // print(data);
+
+    String dateTime = data['datetime'];
+    String offset = data['utc_offset'];
+    print(dateTime);
+    print(offset);
+
   }
 
   @override
   void initState() {
     super.initState();
-    getData();
+    getTime();
   }
 
   @override
