@@ -18,9 +18,11 @@ class _LoadingState extends State<Loading> {
     // print(data);
 
     String dateTime = data['datetime'];
-    String offset = data['utc_offset'];
-    print(dateTime);
+    String offset = data['utc_offset'].substring(1,3);
+    // print(dateTime);
     print(offset);
+
+
 
   }
 
