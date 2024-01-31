@@ -26,8 +26,6 @@ class _LoadingState extends State<Loading> {
     now = now.add(Duration(hours: int.parse(offset)));
     print(now);
 
-
-
   }
 
   @override
