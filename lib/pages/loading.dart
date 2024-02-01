@@ -11,27 +11,10 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  void getTime() async {
-
-    Response response = await get(Uri.parse('https://worldtimeapi.org/api/timezone/Africa/Nairobi'));
-    Map data = jsonDecode(response.body);
-    // print(data);
-
-    String dateTime = data['datetime'];
-    String offset = data['utc_offset'].substring(1,3);
-    // print(dateTime);
-    // print(offset);
-
-    DateTime now = DateTime.parse(dateTime);
-    now = now.add(Duration(hours: int.parse(offset)));
-    print(now);
-
-  }
-
   @override
   void initState() {
     super.initState();
-    getTime();
+    // getTime();
   }
 
   @override
