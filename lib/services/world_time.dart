@@ -27,8 +27,8 @@ class WorldTime{
     // set time property
     time = now.toString();
 
-
-
   }
 
 }
+
+WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.pgn', url: 'Europe/Berlin');
