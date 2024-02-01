@@ -8,6 +8,8 @@ class WorldTime{
   late String flag; // url to an asset flag
   late String url; //location url for API endpoint
 
+  WorldTime({required this.location, required this.flag, required this.url});
+
   void getTime() async {
 
     Response response = await get(Uri.parse('https://worldtimeapi.org/api/timezone/$url'));
