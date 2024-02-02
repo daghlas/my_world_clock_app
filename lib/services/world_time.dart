@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -26,7 +27,9 @@ class WorldTime{
       time = now.toString();
     }
     catch (error) {
-      print('caught error: $error');
+      if (kDebugMode) {
+        print('caught error: $error');
+      }
       time = 'could not get time data';
     }
 
