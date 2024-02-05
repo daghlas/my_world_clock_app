@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 120.0, 0.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(0.0, 160.0, 0.0, 0.0),
         child: Column(
           children: <Widget>[
             ElevatedButton.icon(
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
             Text(
               data['time'],
               style: const TextStyle(
-                fontSize: 20.0,
+                fontSize: 68.0,
               ),
             ),
           ],
