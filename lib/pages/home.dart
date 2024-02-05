@@ -18,42 +18,53 @@ class _HomeState extends State<Home> {
       print(data);
     }
 
+    //setting day/night bg
+    String bgImage =  data['isDaytime'] ? 'day.png': 'night.png';
+
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 160.0, 0.0, 0.0),
-        child: Column(
-          children: <Widget>[
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/location');
-              },
-              icon: const Icon(Icons.edit_location),
-              label: const Text('Edit location'),
-            ),
-            const SizedBox(height: 20.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  data['location'],
-                  style: const TextStyle(
-                    fontSize: 28.0,
-                    letterSpacing: 2.0,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20.0),
-            Text(
-              data['time'],
-              style: const TextStyle(
-                fontSize: 68.0,
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/$bgImage'),
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
-      )),
+            child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 160.0, 0.0, 0.0),
+                    child: Column(
+            children: <Widget>[
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/location');
+                },
+                icon: const Icon(Icons.edit_location),
+                label: const Text('Edit location'),
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    data['location'],
+                    style: const TextStyle(
+                      fontSize: 28.0,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20.0),
+              Text(
+                data['time'],
+                style: const TextStyle(
+                  fontSize: 68.0,
+                ),
+              ),
+            ],
+                    ),
+                  ),
+          )),
     );
   }
 }
