@@ -22,13 +22,8 @@ class _LocationState extends State<Location> {
     WorldTime(url: 'Asia/Jakarta', location: 'Jakarta', flag: 'indonesia.png'),
   ];
 
-  int counter = 0;
-
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print('build function run');
-    }
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
@@ -37,12 +32,16 @@ class _LocationState extends State<Location> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: ElevatedButton(
-        onPressed: (){
-          setState(() {
-            counter ++;
-          });
-        }, child: Text('counter is $counter'),
+      body: ListView.builder(
+        itemCount: locations.length,
+          itemBuilder: (context, index){
+          return Card(
+            child: ListTile(
+              onTap: () {},
+              title: Text(locations[index].location),
+            ),
+          );
+          }
       ),
     );
   }
