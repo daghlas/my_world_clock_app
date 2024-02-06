@@ -19,29 +19,37 @@ class _HomeState extends State<Home> {
     }
 
     //setting day/night bg
-    String bgImage =  data['isDaytime'] ? 'day.png': 'night.png';
-    Color? statusBarColor = data['isDaytime'] ? Colors.blue : Colors.indigo[700];
+    String bgImage = data['isDaytime'] ? 'day.png' : 'night.png';
+    Color? statusBarColor =
+        data['isDaytime'] ? Colors.blue : Colors.indigo[700];
 
     return Scaffold(
       backgroundColor: statusBarColor,
       body: SafeArea(
           child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/$bgImage'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0.0, 160.0, 0.0, 0.0),
-                    child: Column(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/$bgImage'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0.0, 160.0, 0.0, 0.0),
+          child: Column(
             children: <Widget>[
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.pushNamed(context, '/location');
                 },
-                icon: const Icon(Icons.edit_location),
-                label: const Text('Edit location'),
+                icon: Icon(
+                    Icons.edit_location,
+                    color: Colors.blue[900]),
+                label: Text(
+                  'Edit location',
+                  style: TextStyle(
+                    color: Colors.blue[900],
+                  ),
+                ),
               ),
               const SizedBox(height: 20.0),
               Row(
@@ -52,6 +60,7 @@ class _HomeState extends State<Home> {
                     style: const TextStyle(
                       fontSize: 28.0,
                       letterSpacing: 2.0,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -61,12 +70,13 @@ class _HomeState extends State<Home> {
                 data['time'],
                 style: const TextStyle(
                   fontSize: 68.0,
+                  color: Colors.white,
                 ),
               ),
             ],
-                    ),
-                  ),
-          )),
+          ),
+        ),
+      )),
     );
   }
 }
