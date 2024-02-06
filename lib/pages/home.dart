@@ -81,6 +81,10 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 ),
               ),
+              //const SizedBox(height: 20.0),
+              //CircleAvatar(
+              //  backgroundImage: AssetImage('assets/${data['flag']}'),
+              //),
             ],
           ),
         ),
